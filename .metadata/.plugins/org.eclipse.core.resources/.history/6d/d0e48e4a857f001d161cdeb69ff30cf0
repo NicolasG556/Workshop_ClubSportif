@@ -2,4 +2,4 @@ spring.datasource.url=jdbc:mysql://localhost:3306/spring_DB_ClubSportif?createDa
 spring.datasource.username=root
 spring.jpa.show-sql=true
 spring.jpa.hibernate.ddl-auto=update
-server.servlet.context-path=/core
+server.servlet.context-path=/user
