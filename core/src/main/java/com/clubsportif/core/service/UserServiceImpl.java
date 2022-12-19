@@ -44,4 +44,14 @@ public class UserServiceImpl implements UserService{
 		return userRepository.findAll();
 	}
 
+	@Override
+	public List<User> findByNom(String nom) {
+		return userRepository.findByNom(nom);
+	}
+
+	@Override
+	public List<User> findByEmailMotDePasse(String email, String motDePasse) {
+		return userRepository.findByEmailMotDePasse(email, motDePasse);
+	}
+
 }

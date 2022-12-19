@@ -12,5 +12,7 @@ public interface UserService {
 	void deleteUserById(Long id);
 	User getUser(Long id); 
 	List<User> getAllUsers(); 
+	List<User> findByNom(String nom); 
+	List<User> findByEmailMotDePasse(String email, String motDePasse);
 	
 }
