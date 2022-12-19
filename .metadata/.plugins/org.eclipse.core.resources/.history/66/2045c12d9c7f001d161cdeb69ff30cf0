@@ -1,0 +1,22 @@
+package com.clubsportif.core;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.clubsportif.core.entities.User;
+import com.clubsportif.core.repository.UserRepository;
+
+@SpringBootTest
+class CoreApplicationTests {
+	
+	@Autowired
+	private UserRepository userRepository;
+	
+	@Test
+	public void testCreateUser() {
+		User user1 = new User('M', "Guingouain", "Nicolas", "nicolas.guingouain@gmail.com", 1991, "135, Rue d'antrain", "35700", "Rennes", "France", "Nicolas123");
+		userRepository.save(user1); 
+	}
+
+}
