@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="CoreApplicationTests.testfindUserByNom" project="core" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="com.clubsportif.core.CoreApplicationTests" time="0.305" displayname="CoreApplicationTests" uniqueid="[engine:junit-jupiter]/[class:com.clubsportif.core.CoreApplicationTests]">
-    <testcase name="testfindUserByNom" classname="com.clubsportif.core.CoreApplicationTests" time="0.305" displayname="testfindUserByNom()" uniqueid="[engine:junit-jupiter]/[class:com.clubsportif.core.CoreApplicationTests]/[method:testfindUserByNom()]"/>
-  </testsuite>
-</testrun>

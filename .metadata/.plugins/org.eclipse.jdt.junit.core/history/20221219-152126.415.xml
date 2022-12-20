@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="CoreApplicationTests.testfindUserByEmailMotDePasse" project="core" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="com.clubsportif.core.CoreApplicationTests" time="0.193" displayname="CoreApplicationTests" uniqueid="[engine:junit-jupiter]/[class:com.clubsportif.core.CoreApplicationTests]">
-    <testcase name="testfindUserByEmailMotDePasse" classname="com.clubsportif.core.CoreApplicationTests" time="0.193" displayname="testfindUserByEmailMotDePasse()" uniqueid="[engine:junit-jupiter]/[class:com.clubsportif.core.CoreApplicationTests]/[method:testfindUserByEmailMotDePasse()]"/>
-  </testsuite>
-</testrun>
