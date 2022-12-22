@@ -28,14 +28,14 @@ public class UsersMicroserviceApplication {
 	 * 
 	 * //ajouter les users userService.saveUser(new
 	 * User(null,"admin","123",true,null)); userService.saveUser(new
-	 * User(null,"nadhem","123",true,null)); userService.saveUser(new
-	 * User(null,"yassine","123",true,null));
+	 * User(null,"nicolas","123",true,null)); userService.saveUser(new
+	 * User(null,"robert","123",true,null));
 	 * 
 	 * //ajouter les rôles aux users userService.addRoleToUser("admin", "ADMIN");
 	 * userService.addRoleToUser("admin", "USER");
 	 * 
-	 * userService.addRoleToUser("nadhem", "USER");
-	 * userService.addRoleToUser("yassine", "USER"); }
+	 * userService.addRoleToUser("nicolas", "USER");
+	 * userService.addRoleToUser("robert", "USER"); }
 	 */
 	 
 	

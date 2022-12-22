@@ -50,13 +50,14 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 			
 		return authenticationManager.
 			authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(),user.getPassword()));
+		
 	}
 
 	@Override
 	protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain,
 			Authentication authResult) throws IOException, ServletException {
 		
-		org.springframework.security.core.userdetails.User springUser = 
+		org.springframework.security.core.userdetails.User springUser = 	
 			(org.springframework.security.core.userdetails.User) authResult.getPrincipal();
 		
 		List<String> roles = new ArrayList<>();

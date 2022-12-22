@@ -59,7 +59,8 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "club_sportif:build:production"
+              "browserTarget": "club_sportif:build:production",
+              "proxyConfig": "src/proxy.conf.json"
             },
             "development": {
               "browserTarget": "club_sportif:build:development"

@@ -8,5 +8,5 @@ import com.clubsportif.users.entities.User;
 public interface UserRepository extends JpaRepository<User, Long> {
 
 		User findByUsername(String username);
-
+		
 }

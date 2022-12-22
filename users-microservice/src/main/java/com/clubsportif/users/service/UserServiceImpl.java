@@ -31,6 +31,8 @@ public class UserServiceImpl  implements UserService{
 		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 		return userRep.save(user);
 	}
+	
+	
 
 	@Override
 	public User addRoleToUser(String username, String rolename) {
@@ -51,5 +53,27 @@ public class UserServiceImpl  implements UserService{
 	public User findUserByUsername(String username) {	
 		return userRep.findByUsername(username);
 	}
+
+
+
+	@Override
+	public User updateUser(User user) {
+		return userRep.save(user);
+	}
+
+
+
+	@Override
+	public void deleteUserById(Long id) {
+		userRep.deleteById(id);
+	}
+
+
+
+	@Override
+	public User findUserById(Long id) {
+		return userRep.findById(id).get();
+	}
+
 
 }
