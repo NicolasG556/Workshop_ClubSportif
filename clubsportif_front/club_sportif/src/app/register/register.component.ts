@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Role } from '../model/role.model';
 import { User } from '../model/user.model';
@@ -10,28 +10,37 @@ import { userService } from '../services/user.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent {
-  apiURL: string = 'http://localhost:8081/users/register';
-
-  constructor(private http:HttpClient, private userService:userService,
-              private router : Router){
-    
-  }
+export class RegisterComponent implements OnInit {
   newUser = new User();
   user = new User();
   roles! : Role[]; 
   newIdRole! : number; 
   newRole! : Role; 
+  
+  apiURL: string = 'http://localhost:8081/users/api/register';
+
+  constructor(private http:HttpClient, private userService:userService,private router : Router){
+    
+  }
+
+
+  ngOnInit(): void {
+    this.userService.listeRoles().subscribe(rols => this.roles = rols._embedded.roles);
+  }
 
 
   register() {
-    this.newUser.roles.push(this.roles.find(rol => rol.idRole = this.newIdRole)!);
+    console.log(this.roles)
+    this.newUser.roles = [];
+    this.newUser.roles.push(this.roles.find(rol => rol.role_id = 2)!);
+    this.newUser.enabled = 1; 
     this.userService.ajouterUser(this.newUser).
     subscribe(user => {
       
       console.log(user);
       this.router.navigate(['/']);
     });
+
    
   }
 }

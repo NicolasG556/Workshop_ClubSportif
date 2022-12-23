@@ -33,21 +33,16 @@
             <input type="text" [(ngModel)]="newUser.ville" name="villeUser" class="form-control">
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Pays</label>
+            <input type="text" [(ngModel)]="newUser.pays" name="paysUser" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
             <label>E-mail</label>
             <input type="text" [(ngModel)]="newUser.username" name="usernameUser" class="form-control">
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4">
             <label>Mot de passe :</label>
             <input type="password" [(ngModel)]="newUser.password" name= "passwordUser" class="form-control">
-        </div>
-
-        <div class="col-sm-4 col-md-4 col-lg-4">
-            <label>Roles</label>
-            <select class="form-control form-control-lg" id="idRole" name="idRole" [(ngModel)]="newIdRole">
-                <option *ngFor="let rol of roles" [value]="rol.idRole">
-                    {{rol.nomRole}}
-                </option>
-            </select>
         </div>
 
         <div class="row justify-content-md-center">

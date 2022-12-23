@@ -1,0 +1,27 @@
+<div class="container">
+    <!--<div class="card shadow mb-4 w-100">
+        <div class="card-body w-100">-->
+            <table class="table table-striped">
+                <thead>
+                    <tr> <th>Id</th> <th>Civilité</th> <th>Nom</th> <th>Prenom</th> <th>Email</th> <th>Adresse</th> <th>Code Postal</th> <th>Ville</th> <th>Pays</th> <th>Enabled</th> <th>Role</th></tr>
+                </thead>
+                <tbody *ngFor="let user of users">
+                    <tr>
+                        <td>{{user.user_id}}</td>
+                        <td>{{user.civilite}}</td>
+                        <td>{{user.nom}}</td>
+                        <td>{{user.prenom}}</td>
+                        <td>{{user.username}}</td>
+                        <td>{{user.adresse}}</td>
+                        <td>{{user.codePostal}}</td>
+                        <td>{{user.ville}}</td>
+                        <td>{{user.pays}}</td>
+                        <td>{{user.enabled}}</td>
+                        <td>{{user.roles}}</td>
+                        <td><a class="btn btn-success" [routerLink]="['/update_user',user.user_id]">Modifier</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+   <!-- </div>
+</div>-->
