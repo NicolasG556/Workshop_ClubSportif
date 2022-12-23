@@ -20,6 +20,7 @@ export class userService {
   apiURLregister: string = 'http://localhost:8081/users/api/register';
   apiURL: string = 'http://localhost:8081/users/api';
   apiUrlRoles: string = 'http://localhost:8081/users/ressource_role';
+  apiUrlUpdateUser: string = 'http://localhost:8081/users/api//addRoleToUser';
 
   constructor(private http: HttpClient, private authService:AuthService) {
  
@@ -49,12 +50,30 @@ export class userService {
   }*/
 
   updateUser(usr: User): Observable<User> {
-    return this.http.put<User>(this.apiURL, usr, httpOptions);
+    let jwt = this.authService.getToken();
+    jwt = "Bearer "+jwt;
+    let httpHeaders = new HttpHeaders({"Authorization":jwt}) 
+    return this.http.put<User>(this.apiURL, usr, {headers:httpHeaders});
   }
 
   listeRoles():Observable<RoleWrapper> {
     return this.http.get<RoleWrapper>(this.apiUrlRoles);
   }
+
+  consulterUser(id: number): Observable<User> {
+    const url = `${this.apiURL}/${id}`;
+    let jwt = this.authService.getToken();
+    jwt = "Bearer "+jwt;
+    let httpHeaders = new HttpHeaders({"Authorization":jwt}) 
+      return this.http.get<User>(url,{headers:httpHeaders});
+    }
+
+    ajouterRoleAUser(usr: User): Observable<User> {
+      let jwt = this.authService.getToken();
+      jwt = "Bearer "+jwt;
+      let httpHeaders = new HttpHeaders({"Authorization":jwt}) 
+      return this.http.post<User>(this.apiURL + "/addRoleToUser", usr, {headers:httpHeaders});
+    }
 
 
 }
