@@ -15,6 +15,7 @@ export class User{
     codePostal!:string;
     pays!:string;
     adresse!:string;
+    civiliteLettres!:string
 
 
     }

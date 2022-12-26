@@ -26,6 +26,13 @@ export class UpdateUserComponent implements OnInit {
     this.userService.consulterUser(this.activatedRoute.snapshot.params['id']).
     subscribe(usr => {this.currentUser = usr;
                       this.currentUserRoles = usr.roles;
+                      if (this.currentUser.civilite === 1){
+                        this.currentUser.civiliteLettres = "M"
+                      } else if (this.currentUser.civilite === 2){
+                        this.currentUser.civiliteLettres = "Mme"
+                      } else {
+                        this.currentUser.civiliteLettres = "oups"
+                      }; 
     });
 
     this.userService.listeRoles().subscribe(rols => this.roles = rols._embedded.roles);

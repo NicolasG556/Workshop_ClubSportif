@@ -11,16 +11,28 @@ import { userService } from '../services/user.service';
 })
 export class MonProfilComponent {
   currentUser = new User();
+  civiliteLettre! :string; 
 
 
   constructor(private activatedRoute: ActivatedRoute,
     private router :Router,
     private userService: userService, private authservice : AuthService) {
+    
     }
 
   ngOnInit(): void {
-    this.userService.getUserByUsername(this.authservice.loggedUser).subscribe(user => this.currentUser = user); 
-    console.log(this.currentUser); 
+    this.userService.getUserByUsername(this.authservice.loggedUser).subscribe(user => {
+      this.currentUser = user;   
+      if (this.currentUser.civilite === 1){
+      this.currentUser.civiliteLettres = "M"
+    } else if (this.currentUser.civilite === 2){
+      this.currentUser.civiliteLettres = "Mme"
+    } else {
+      this.currentUser.civiliteLettres = "oups"
+    };
+  
+  }); 
+   
 
   }
 

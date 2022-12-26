@@ -15,17 +15,18 @@
   <h1 class="ml-2 mr-3">ClubSportif</h1>
   <!-- Links -->
   <ul class="navbar-nav">
-    <li class="nav-item">
+    
+    <li *ngIf="!authService.loggedUser" class="nav-item">
       <a class="nav-link" routerLink="/register">S'inscrire</a>
     </li>
-    <li class="nav-item">
+    <li *ngIf="!authService.loggedUser" class="nav-item">
       <a class="nav-link" routerLink="/login">Se connecter</a>
     </li>
     
     <!-- Dropdown -->
     <li class="nav-item dropdown">
       <a *ngIf="authService.isAdmin()" class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Admin
+        Espace Admin
       </a>
       <div class="dropdown-menu">
         <a  class="dropdown-item" href="#">Voir les demandes de coaching</a>
@@ -34,16 +35,17 @@
     </li>
   </ul>
 
-  <ul class="navbar-nav ml-auto mr-3">
+  <ul *ngIf="authService.loggedUser" class="navbar-nav ml-auto mr-3">
     <li> </li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
       {{authService.loggedUser}}
       </a>
+
       <div class="dropdown-menu">
         <a class="dropdown-item" routerLink="/login">login</a>
         <a class="dropdown-item" (click)="onLogout()">logout</a>
-        <a *ngIf="authService.loggedUser" class="dropdown-item" routerLink="/mon_profil">Mon profil</a>
+        <a class="dropdown-item" routerLink="/mon_profil">Mon profil</a>
       </div>
     </li>
   </ul>
