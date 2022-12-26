@@ -55,7 +55,7 @@ UserDetailsService userDetailsService)
 		http.authorizeRequests().antMatchers("/login").permitAll(); 
 		http.authorizeRequests().antMatchers("/register").permitAll();
 		http.authorizeRequests().antMatchers("/all").hasAuthority("ADMIN");
-		http.authorizeRequests().anyRequest().authenticated();
+		//http.authorizeRequests().anyRequest().authenticated();
 		http.addFilter(new  JWTAuthenticationFilter (authMgr)) ;
 		http.addFilterBefore(new JWTAuthorizationFilter(),UsernamePasswordAuthenticationFilter.class);
 		return http.build();

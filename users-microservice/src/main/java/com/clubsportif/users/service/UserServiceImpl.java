@@ -32,7 +32,6 @@ public class UserServiceImpl  implements UserService{
 		return userRep.save(user);
 	}
 	
-	
 
 	@Override
 	public User addRoleToUser(String username, String rolename) {
