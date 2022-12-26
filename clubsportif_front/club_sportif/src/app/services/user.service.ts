@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { User } from '../model/user.model';
 import { Role } from '../model/role.model';
 import { AuthService } from './auth.service';
@@ -26,6 +26,8 @@ export class userService {
  
   }
 
+  //GESTION USER
+
   listeUser(): Observable<User[]> {
     let jwt = this.authService.getToken();
     jwt = "Bearer "+jwt;
@@ -37,27 +39,16 @@ export class userService {
     return this.http.post<User>(this.apiURLregister, usr, httpOptions);
   }
 
-  //A METTRE EN PLACE
-
- /* supprimerUser(id: number): Observable<User> {
+  supprimerUser(id: number): Observable<User> {
     const url = `${this.apiURL}/${id}`;
     return this.http.delete<User>(url, httpOptions);
   }
-
-  consulterUser(id: number): Observable<User> {
-    const url = `${this.apiURL}/${id}`;
-    return this.http.get<User>(url);
-  }*/
 
   updateUser(usr: User): Observable<User> {
     let jwt = this.authService.getToken();
     jwt = "Bearer "+jwt;
     let httpHeaders = new HttpHeaders({"Authorization":jwt}) 
     return this.http.put<User>(this.apiURL, usr, {headers:httpHeaders});
-  }
-
-  listeRoles():Observable<RoleWrapper> {
-    return this.http.get<RoleWrapper>(this.apiUrlRoles);
   }
 
   consulterUser(id: number): Observable<User> {
@@ -68,12 +59,28 @@ export class userService {
       return this.http.get<User>(url,{headers:httpHeaders});
     }
 
-    ajouterRoleAUser(usr: User): Observable<User> {
+  getUserByUsername(username: string): Observable<User> {
+    let queryParams = new HttpParams();
+    queryParams = queryParams.append('username', username);
+    return this.http.get<User>(this.apiURL , { params: queryParams }); 
+  }
+
+  
+  //GESTION ROLES
+
+  listeRoles():Observable<RoleWrapper> {
+    return this.http.get<RoleWrapper>(this.apiUrlRoles);
+  }
+
+  
+
+    //A CORRIGER POUR QUE L'ADMIN PUISSE AJOUTER UN ROLE A UN USER
+   /* ajouterRoleAUser(username: String, rolename: String): Observable<User> {
       let jwt = this.authService.getToken();
       jwt = "Bearer "+jwt;
       let httpHeaders = new HttpHeaders({"Authorization":jwt}) 
-      return this.http.post<User>(this.apiURL + "/addRoleToUser", usr, {headers:httpHeaders});
-    }
+      return this.http.post<User>(this.apiURL + "/addRoleToUser", username, rolename, {headers:httpHeaders});
+    }*/
 
 
 }

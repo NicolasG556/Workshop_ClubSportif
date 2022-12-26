@@ -30,22 +30,20 @@
       <div class="dropdown-menu">
         <a  class="dropdown-item" href="#">Voir les demandes de coaching</a>
         <a class="dropdown-item" routerLink="users">Liste des utilisateurs</a>
-        <a class="dropdown-item" href="#">Link 3</a>
       </div>
     </li>
   </ul>
 
-  <ul class="navbar-nav ml-auto">
-    <li> <a class="nav-link">{{authService.loggedUser}}</a></li>
+  <ul class="navbar-nav ml-auto mr-3">
+    <li> </li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Connexion
+      {{authService.loggedUser}}
       </a>
       <div class="dropdown-menu">
         <a class="dropdown-item" routerLink="/login">login</a>
-        <a class="dropdown-item" routerLink="/register">S'inscrire</a>
         <a class="dropdown-item" (click)="onLogout()">logout</a>
-        <a class="dropdown-item" href="#">Profile</a>
+        <a *ngIf="authService.loggedUser" class="dropdown-item" routerLink="/mon_profil">Mon profil</a>
       </div>
     </li>
   </ul>

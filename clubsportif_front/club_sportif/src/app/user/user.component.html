@@ -19,10 +19,10 @@
                         <td>{{user.enabled}}</td>
                         <td>
                             <p *ngFor="let i of user.roles">
-                                {{i.role}}
+                                {{i.role}} 
                             </p>
                         </td>
-                        
+                        <td><a class="btn btn-danger" (click)="supprimerUser(user)">Supprimer</a></td>
                         <td><a class="btn btn-success" [routerLink]="['/update_user',user.user_id]">Modifier</a></td>
                     </tr>
                 </tbody>

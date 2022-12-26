@@ -1,0 +1,51 @@
+<div class="container">
+    <div>
+        <h2>Mes infos perso :</h2>
+    </div>
+    <form>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>ID User</label>
+            <input readonly type="text" [(ngModel)]="currentUser.user_id" name="idUser" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Civilité</label>
+            <input type="number" [(ngModel)]="currentUser.civilite" name="civiliteUser" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom</label>
+            <input type="text" [(ngModel)]="currentUser.nom" name="nomUser" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Prenom</label>
+            <input type="text" [(ngModel)]="currentUser.prenom" name="prenomUser" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Annee Naissance</label>
+            <input type="text" [(ngModel)]="currentUser.anneeNaissance" name="DOBUser" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Adresse</label>
+            <input type="text" [(ngModel)]="currentUser.adresse" name="AdresseUser" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Code Postal</label>
+            <input type="text" [(ngModel)]="currentUser.codePostal" name="CPUser" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Ville</label>
+            <input type="text" [(ngModel)]="currentUser.ville" name="villeUser" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Pays</label>
+            <input type="text" [(ngModel)]="currentUser.pays" name="paysUser" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Enabled</label>
+            <input type="number" [(ngModel)]="currentUser.enabled" name="isUserEnable" class="form-control">
+        </div>
+        
+        <div class="mt-2">
+            <button type="submit" (click)="updateUser()" class="btn btn-success">Modifer</button>
+        </div>
+    </form>
+</div>

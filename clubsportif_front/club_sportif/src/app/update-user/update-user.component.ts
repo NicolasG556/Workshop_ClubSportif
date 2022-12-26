@@ -32,6 +32,7 @@ export class UpdateUserComponent implements OnInit {
   }
 
   updateUser(){
+    
     this.currentUserRoles.push(this.roles.find(rol => rol.role_id == this.updatedRoleId)!);
     this.userService.updateUser(this.currentUser).
     subscribe(usr => {this.router.navigate(['users']);

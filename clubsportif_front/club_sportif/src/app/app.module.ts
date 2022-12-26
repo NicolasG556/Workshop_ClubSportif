@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { UserComponent } from './user/user.component';
+import { MonProfilComponent } from './mon-profil/mon-profil.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { UserComponent } from './user/user.component';
     RegisterComponent,
     UpdateUserComponent,
     UserComponent,
+    MonProfilComponent,
   ],
   imports: [
     BrowserModule,

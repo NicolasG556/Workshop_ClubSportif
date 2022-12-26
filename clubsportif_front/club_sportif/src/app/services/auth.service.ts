@@ -10,6 +10,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 export class AuthService {
   private helper = new JwtHelperService();
   public loggedUser!: string;
+  public loggedUserid! : number;
   public isloggedIn: Boolean = false;
   public roles!: string[];
   apiURL: string = 'http://localhost:8081/users';
@@ -46,6 +47,7 @@ export class AuthService {
     this.roles = decodedToken.roles;
     this.loggedUser = decodedToken.sub;
   }
+
 
   /*SignIn(user: User): Boolean {
     let validUser: Boolean = false;

@@ -30,5 +30,17 @@ export class UserComponent {
     });
   }
 
+  supprimerUser(u: User) {
+    let conf = confirm('Etes-vous sur ?');
+
+    if (conf) {
+      this.userService.supprimerUser(u.user_id).subscribe(() => {
+        console.log('User supprimé');
+
+        this.chargerUser();
+      });
+    }
+  }
+
 
 }
