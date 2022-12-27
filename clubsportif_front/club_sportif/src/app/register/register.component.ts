@@ -30,14 +30,14 @@ export class RegisterComponent implements OnInit {
 
 
   register() {
-    console.log(this.roles)
+    
     this.newUser.roles = [];
     this.newUser.roles.push(this.roles.find(rol => rol.role_id = 2)!);
     this.newUser.enabled = 1; 
     this.userService.ajouterUser(this.newUser).
     subscribe(user => {
       
-      console.log(user);
+      
       this.router.navigate(['/']);
     });
 

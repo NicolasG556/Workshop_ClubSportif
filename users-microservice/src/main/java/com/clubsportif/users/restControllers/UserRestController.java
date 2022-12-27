@@ -72,6 +72,11 @@ public class UserRestController {
 		userServ.deleteUserById(id);
 	}
 	
+	@RequestMapping(value = "usersRole/{idRole}", method = RequestMethod.GET)
+	public List<User> getUserByRoleId(@PathVariable("idRole") Long idRole){
+		return userServ.findUserByIdRole(idRole);
+	}
+	
 	
 	
 	

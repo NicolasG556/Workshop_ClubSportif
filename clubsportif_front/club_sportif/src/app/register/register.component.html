@@ -5,7 +5,14 @@
     <form>
         <div class="col-sm-4 col-md-4 col-lg-4">
             <label>Civilité</label>
-            <input type="text" [(ngModel)]="newUser.civilite" name="civiliteUser" class="form-control">
+            <select class="form-control form-control-lg" id="Civilite" name="Civilite" [(ngModel)]="newUser.civilite">
+                <option [value]=1>
+                    Monsieur
+                </option>
+                <option [value]=2>
+                    Madame
+                </option>
+            </select>
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4">
             <label>Nom</label>

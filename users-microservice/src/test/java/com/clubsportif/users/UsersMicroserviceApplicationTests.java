@@ -1,5 +1,7 @@
 package com.clubsportif.users;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -37,6 +39,13 @@ class UsersMicroserviceApplicationTests {
 		
 		System.out.println(r);
 	}
+	
+	/*public void testFindByUserIdRole() {
+		List<User> users = userRepository.findByIdRole(3L);
+				for(User u : users) {
+					System.out.println(u);
+				}
+	}*/
 	
 
 }

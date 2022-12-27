@@ -65,6 +65,11 @@ export class userService {
     return this.http.get<User>(this.apiURL , { params: queryParams }); 
   }
 
+  getCoach(): Observable<User[]>{
+    const url = `${this.apiURL}/usersRole/3`
+      return this.http.get<User[]>(url)
+  }
+
   
   //GESTION ROLES
 

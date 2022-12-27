@@ -22,9 +22,6 @@ export class AppComponent {
   console.log("Init App component! ")
 
   this.authService.loadToken();
-  if (this.authService.getToken()==null){
-    this.router.navigate(['/login']);
-  }
   
 
 }

@@ -75,6 +75,13 @@ export class AuthService {
     return this.roles.indexOf('ADMIN') >= 0;
   }
 
+  isCoach(): Boolean {
+    if (!this.roles)
+      //this.roles== undefiened
+      return false;
+    return this.roles.indexOf('COACH') >= 0;
+  }
+
   getToken(): string {
     return this.token;
   }
